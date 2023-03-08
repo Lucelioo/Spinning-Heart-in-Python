@@ -12,7 +12,6 @@ def main():
       r = 0.4 + 0.05 * math.pow(0.5 + 0.5 * math.sin(t * 6 + y * 2), 8)
       x = -0.5
       while x <= 0.5:
-        # heart formula
         z = -x * x - math.pow(1.2 * y - abs(x) * 2 / 3, 2) + r * r
         if z >= 0:
           z = math.sqrt(z) / (2 - y)
