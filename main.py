@@ -1,7 +1,6 @@
 import time, math
 
 def main():
-  # Clear screen hide cursor
   print("\x1b[2J\x1b[?25l", end='')
   zb = [0.0] * 100 * 40
 
@@ -10,7 +9,6 @@ def main():
     maxz, c, s = 0, math.cos(t), math.sin(t)
     y = -0.5
     while y <= 0.5:
-      # Add beating effect
       r = 0.4 + 0.05 * math.pow(0.5 + 0.5 * math.sin(t * 6 + y * 2), 8)
       x = -0.5
       while x <= 0.5:
@@ -20,11 +18,9 @@ def main():
           z = math.sqrt(z) / (2 - y)
           tz = -z
           while tz <= z:
-            # Rotate
             nx = x * c - tz * s
             nz = x * s + tz * c
 
-            # Add perspective
             p = 1 + nz / 2
             vx = round((nx * p + 0.5) * 80 + 10)
             vy = round((-y * p + 0.5) * 39 + 2)
